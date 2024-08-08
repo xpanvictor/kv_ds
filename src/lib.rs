@@ -11,7 +11,8 @@ impl KvStore {
     }
 
     pub fn get(&self, key: String) ->  Option<String> {
-        unimplemented!()
+        eprintln!("unimplemented");
+        panic!()
     }
 
     pub fn remove(&self, key: String) {
