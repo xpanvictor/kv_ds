@@ -1,6 +1,12 @@
 [package]
-name = "kv_ds"
+name = "kvs"
 version = "0.1.0"
+authors = ["Xpan Victor <xpanvictor@gmail.com>"]
+description = "A key-value store"
 edition = "2021"
 
 [dependencies]
+
+[dev-dependencies]
+assert_cmd = "2.0.15"
+predicates = "3.1.2"
