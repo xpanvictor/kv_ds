@@ -18,6 +18,12 @@ pub struct KvStore{
 }
 
 
+impl Default for KvStore {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl KvStore {
     /// To create a new store
     pub fn new() -> KvStore {
