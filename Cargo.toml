@@ -15,7 +15,7 @@ test = false
 doctest = false
 
 [dependencies]
-clap = { version = "4.5.14", features = ["cargo"] }
+clap = { version = "4.5.14", features = ["derive"] }
 
 [dev-dependencies]
 assert_cmd = "2.0.15"
