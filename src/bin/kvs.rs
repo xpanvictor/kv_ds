@@ -1,11 +1,10 @@
-use std::collections::hash_map::Keys;
 use clap::{Parser, Subcommand, command};
 // Initialize clap for argument parsing
 
 
 // Clap's configuration
 #[derive(Parser)]
-#[command(version, about, long_about=None)]
+#[command(name = "kvs", version, about, author)]
 struct Args {
     /// Sub commands for kvs
     #[clap(subcommand)]

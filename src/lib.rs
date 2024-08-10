@@ -1,21 +1,10 @@
+#![deny(missing_docs)]
 
-pub struct KvStore;
 
-impl KvStore {
-    pub fn new() -> KvStore {
-        KvStore{}
-    }
+//! This is a key-value store
+pub use kv_store::KvStore;
 
-    pub fn set(&mut self, key: String, value: String) {
-        unimplemented!()
-    }
 
-    pub fn get(&self, key: String) ->  Option<String> {
-        eprintln!("unimplemented");
-        panic!()
-    }
+mod kv_store;
 
-    pub fn remove(&self, key: String) {
-        unimplemented!()
-    }
-}
+
