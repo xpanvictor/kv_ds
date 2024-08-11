@@ -1,6 +1,7 @@
 
 use std::collections::HashMap;
-
+use std::path::Path;
+use crate::error::Result;
 
 /// Key-Value store
 /// 
@@ -32,20 +33,32 @@ impl KvStore {
         }
     }
 
+    /// Open KvStore at a file path
+    pub fn open(file_path: &Path) -> Result<KvStore> {
+        unimplemented!()
+    }
+
     /// To write a value to a key in store
     /// NOTE: It overwrites old key
-    pub fn set(&mut self, key: String, value: String) {
+    pub fn set(&mut self, key: String, value: String) -> Result<()> {
         self.store.insert(key, value);
+        Ok(())
     }
 
     /// To retrieve the value of a key from the store
     /// Returns None for non-existent key
-    pub fn get(&self, key: String) ->  Option<String> {
-        Some(self.store.get(&key)?.to_string())
+    pub fn get(&self, key: String) ->  Result<Option<String>> {
+        let res = self.store.get(&key);
+        if res.is_some() {
+            Ok(Some(res.unwrap().to_string()))
+        } else {
+            Ok(None)
+        }
     }
 
     /// To remove a key, and it's corresponding value from store
-    pub fn remove(&mut self, key: String) {
+    pub fn remove(&mut self, key: String) -> Result<()> {
         self.store.remove(&key);
+        Ok(())
     }
 }

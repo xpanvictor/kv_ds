@@ -1,4 +1,5 @@
 use clap::{Parser, Subcommand, command};
+use kvs::Result;
 // Initialize clap for argument parsing
 
 
@@ -33,7 +34,7 @@ enum Subcommands {
     }
 }
 
-fn main() {
+fn main() -> Result<()> {
 
     let env_vars = Args::parse();
 
@@ -54,6 +55,6 @@ fn main() {
             panic!()
         }
     }
-
-
+    
+    panic!()
 }
