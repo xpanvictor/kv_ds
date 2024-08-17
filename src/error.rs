@@ -7,7 +7,7 @@ pub struct KvsError {
 }
 
 #[derive(Clone, Debug, Eq, PartialEq, Copy, Fail)]
-enum KvsErrorKind {
+pub enum KvsErrorKind {
     #[fail(display = "Just a general error")]
     GeneralError
 }
